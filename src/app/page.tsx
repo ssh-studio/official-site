@@ -2,112 +2,239 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <header className="flex max-w-7xl items-center justify-start mx-auto h-24">
+        <div className="mr-auto flex items-center gap-x-2">
+          <Image
+            src={"/logo.svg"}
+            width={50}
+            height={50}
+            alt="SSH.Studio's Logo"
+          />
+          <span className="font-semibold text-sm">
+            SSH.Studio
+          </span>
+        </div>
+        <div className="ml-auto">
+          <button className="text-sm font-semibold border-yellow-300/50 hover:border-yellow-300 duration-200 px-4 py-2 rounded-lg border-2">
+            Contact Us
+          </button>
+        </div>
+      </header>
+      <div className="relative max-w-7xl mx-auto flex flex-col items-center justify-center min-h-[600px]">
+        <svg
+          height={600}
+          width={600}
+          className="absolute  animate-[spin_50s_linear_infinite] z-0 stroke-yellow-500/25"
+          viewBox="0 0 800 800"
+        >
+          <g fill="none" stroke-linecap="round">
+            <circle
+              r="363"
+              cx="400"
+              cy="400"
+              stroke-width="7"
+              stroke-dasharray="1939 2281"
+              transform="rotate(360, 400, 400)"
+              opacity="0.71"
+            ></circle>
+            <circle
+              r="346.5"
+              cx="400"
+              cy="400"
+              stroke-width="7"
+              stroke-dasharray="1762 2177"
+              transform="rotate(343, 400, 400)"
+              opacity="0.69"
+            ></circle>
+            <circle
+              r="330"
+              cx="400"
+              cy="400"
+              stroke-width="7"
+              stroke-dasharray="1595 2073"
+              transform="rotate(326, 400, 400)"
+              opacity="0.16"
+            ></circle>
+            <circle
+              r="313.5"
+              cx="400"
+              cy="400"
+              stroke-width="7"
+              stroke-dasharray="1435 1970"
+              transform="rotate(309, 400, 400)"
+              opacity="0.54"
+            ></circle>
+            <circle
+              r="297"
+              cx="400"
+              cy="400"
+              stroke-width="7"
+              stroke-dasharray="1284 1866"
+              transform="rotate(291, 400, 400)"
+              opacity="1.00"
+            ></circle>
+            <circle
+              r="280.5"
+              cx="400"
+              cy="400"
+              stroke-width="7"
+              stroke-dasharray="1141 1762"
+              transform="rotate(274, 400, 400)"
+              opacity="0.92"
+            ></circle>
+            <circle
+              r="264"
+              cx="400"
+              cy="400"
+              stroke-width="7"
+              stroke-dasharray="1007 1659"
+              transform="rotate(257, 400, 400)"
+              opacity="0.57"
+            ></circle>
+            <circle
+              r="247.5"
+              cx="400"
+              cy="400"
+              stroke-width="7"
+              stroke-dasharray="881 1555"
+              transform="rotate(240, 400, 400)"
+              opacity="0.86"
+            ></circle>
+            <circle
+              r="231"
+              cx="400"
+              cy="400"
+              stroke-width="7"
+              stroke-dasharray="764 1451"
+              transform="rotate(223, 400, 400)"
+              opacity="0.68"
+            ></circle>
+            <circle
+              r="214.5"
+              cx="400"
+              cy="400"
+              stroke-width="7"
+              stroke-dasharray="655 1348"
+              transform="rotate(206, 400, 400)"
+              opacity="0.90"
+            ></circle>
+            <circle
+              r="198"
+              cx="400"
+              cy="400"
+              stroke-width="7"
+              stroke-dasharray="554 1244"
+              transform="rotate(189, 400, 400)"
+              opacity="0.89"
+            ></circle>
+            <circle
+              r="181.5"
+              cx="400"
+              cy="400"
+              stroke-width="7"
+              stroke-dasharray="462 1140"
+              transform="rotate(171, 400, 400)"
+              opacity="0.16"
+            ></circle>
+            <circle
+              r="165"
+              cx="400"
+              cy="400"
+              stroke-width="7"
+              stroke-dasharray="378 1037"
+              transform="rotate(154, 400, 400)"
+              opacity="0.67"
+            ></circle>
+            <circle
+              r="148.5"
+              cx="400"
+              cy="400"
+              stroke-width="7"
+              stroke-dasharray="302 933"
+              transform="rotate(137, 400, 400)"
+              opacity="0.67"
+            ></circle>
+            <circle
+              r="132"
+              cx="400"
+              cy="400"
+              stroke-width="7"
+              stroke-dasharray="235 829"
+              transform="rotate(120, 400, 400)"
+              opacity="0.78"
+            ></circle>
+            <circle
+              r="115.5"
+              cx="400"
+              cy="400"
+              stroke-width="7"
+              stroke-dasharray="176 726"
+              transform="rotate(103, 400, 400)"
+              opacity="0.38"
+            ></circle>
+            <circle
+              r="99"
+              cx="400"
+              cy="400"
+              stroke-width="7"
+              stroke-dasharray="126 622"
+              transform="rotate(86, 400, 400)"
+              opacity="0.89"
+            ></circle>
+            <circle
+              r="82.5"
+              cx="400"
+              cy="400"
+              stroke-width="7"
+              stroke-dasharray="84 518"
+              transform="rotate(69, 400, 400)"
+              opacity="0.19"
+            ></circle>
+            <circle
+              r="66"
+              cx="400"
+              cy="400"
+              stroke-width="7"
+              stroke-dasharray="50 415"
+              transform="rotate(51, 400, 400)"
+              opacity="0.74"
+            ></circle>
+            <circle
+              r="49.5"
+              cx="400"
+              cy="400"
+              stroke-width="7"
+              stroke-dasharray="25 311"
+              transform="rotate(34, 400, 400)"
+              opacity="0.25"
+            ></circle>
+            <circle
+              r="33"
+              cx="400"
+              cy="400"
+              stroke-width="7"
+              stroke-dasharray="8 207"
+              transform="rotate(17, 400, 400)"
+              opacity="0.49"
+            ></circle>
+            <circle
+              r="16.5"
+              cx="400"
+              cy="400"
+              stroke-width="7"
+              stroke-dasharray="0 104"
+              opacity="0.79"
+            ></circle>
+          </g>
+        </svg>
+        <div className="flex gap-y-4 relative flex-col items-center justify-center">
+          <h1 className="py-5 text-9xl font-black text-transparent bg-clip-text bg-gradient-to-b from-yellow-500 to-yellow-600/10">
+            Coming Soon
+          </h1>
+          <p className="font-bold">We will be Live Soon!</p>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </>
   );
 }
