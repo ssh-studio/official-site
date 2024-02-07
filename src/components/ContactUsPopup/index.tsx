@@ -85,13 +85,13 @@ const ContactUsPopup: FunctionComponent<
       >
         <IconBTN
           onclick={changeState}
-          className="absolute left-auto right-5 mt-5 bg-red-600 hover:bg-red-800"
+          className="absolute z-50 left-auto right-2 mt-2 md:right-5 md:mt-5 bg-red-600 hover:bg-red-800"
         >
           <IoCloseOutline className="h-8 w-8" />
         </IconBTN>
         <div
           data-isopen={isopen}
-          className="invisible mx-auto mb-auto mt-28 max-w-md translate-y-8 rounded-lg border bg-white p-4 shadow-xl duration-300 data-[isopen=true]:visible data-[isopen=true]:translate-y-0 dark:border-zinc-800 dark:bg-zinc-900"
+          className="invisible mx-auto mb-auto mt-4 md:mt-28 max-w-md translate-y-8 rounded-lg border bg-white p-4 shadow-xl duration-300 data-[isopen=true]:visible data-[isopen=true]:translate-y-0 dark:border-zinc-800 dark:bg-zinc-900"
         >
           <form
             className="w-80 md:w-96 flex flex-col items-center"
@@ -164,7 +164,7 @@ const ContactUsPopup: FunctionComponent<
               </div>
             </label>
             <HCaptcha
-              sitekey={`${process.env.HCAPTCHA_SITEKEY}`}
+              sitekey="9c985756-6a5c-46b6-99ab-c20caf16b1dd"
               onVerify={onVerify}
             />
             <button
