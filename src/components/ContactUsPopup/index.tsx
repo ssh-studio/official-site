@@ -98,7 +98,7 @@ const ContactUsPopup: FunctionComponent<
             onSubmit={(e) => sendMessage(e)}
           >
             <label className="block w-full text-sm font-semibold text-gray-200">
-              What's your name?
+              What&lsquo;s your name?
               <span className="opacity-50 ml-1 text-red-600">
                 *
               </span>
@@ -112,7 +112,7 @@ const ContactUsPopup: FunctionComponent<
               required
             />
             <label className="block w-full mt-4 text-sm font-semibold text-gray-200">
-              What's your email?
+              What&lsquo;s your email?
               <span className="opacity-50 ml-1 text-red-600">
                 *
               </span>
@@ -160,7 +160,7 @@ const ContactUsPopup: FunctionComponent<
               />
               <div className="text-slate-200 text-xs">
                 I would like to receive Newsletters on what
-                SSH.Studio's been up to.
+                SSH.Studio&lsquo;s been up to.
               </div>
             </label>
             <HCaptcha
