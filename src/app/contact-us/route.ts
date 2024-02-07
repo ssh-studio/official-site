@@ -14,7 +14,7 @@ export async function POST(request: Request) {
         }, function (err:Error, record:any) {
             if (err) {
                 console.error(err);
-                return Response.json({ message: "Something went wrong!" }, {
+                return Response.json({ message: "Something went wrong!", source: "ARTB" }, {
                     status: 500,
                 });
             }
@@ -32,7 +32,7 @@ export async function POST(request: Request) {
             audienceId: 'f5c99301-b8f0-46ee-997e-e98f7f8c097a',
           });
           if (createContact.error?.message) {
-            return Response.json({message: "Something went wrong!"},{
+            return Response.json({message: "Something went wrong!",source: "RSND"},{
                 status: 500,
             })
           }
