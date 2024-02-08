@@ -4,24 +4,22 @@ import { Resend } from 'resend';
 export async function POST(request: Request) {
     const airtableBase = new Airtable({apiKey: process.env.AIRTABLE_ACCESS_TOKEN}).base("applEi0ZgreOceYRX")
     const res = await request.json()
-    if (res.email !== "") {
-        const createAirtableRecord = airtableBase('Table 1').create({
-            "Name": res.name,
-            "Email": res.email,
-            "Message": res.message,
-            "Company Name": res.company,
-            "isSubscribed": res.newsletters === "on" ? true : false
-        }, function (err:Error, record:any) {
-            if (err) {
-                console.error(err);
-                return Response.json({ message: "Something went wrong!", source: "ARTB" }, {
-                    status: 500,
-                });
-            }
-        })
-        if (process.env.NODE_ENV !== "production") {
-            console.log(createAirtableRecord);
+    const createAirtableRecord = airtableBase('Table 1').create({
+        "Name": res.name,
+        "Email": res.email,
+        "Message": res.message,
+        "Company Name": res.company,
+        "isSubscribed": res.newsletters === "on" ? true : false
+    }, function (err:Error) {
+        if (err) {
+            console.error(err);
+            return Response.json({ message: "Something went wrong!", source: "ARTB" }, {
+                status: 500,
+            });
         }
+    })
+    if (process.env.NODE_ENV !== "production") {
+        console.log(createAirtableRecord);
     }
     if (res.newsletters === "on") {
         const resend = new Resend(process.env.RESEND_API_KEY);
