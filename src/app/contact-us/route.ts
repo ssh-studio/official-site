@@ -18,9 +18,10 @@ export async function POST(request: Request) {
                     status: 500,
                 });
             }
-            console.log(record.getID());
         })
-        console.log(createAirtableRecord);
+        if (process.env.NODE_ENV !== "production") {
+            console.log(createAirtableRecord);
+        }
     }
     if (res.newsletters === "on") {
         const resend = new Resend(process.env.RESEND_API_KEY);
@@ -28,18 +29,25 @@ export async function POST(request: Request) {
             email: res.email,
             firstName: String(res.name).split(" ")[0],
             lastName: String(res.name).split(" ")[1],
-            unsubscribed: true,
+            unsubscribed: false,
             audienceId: 'f5c99301-b8f0-46ee-997e-e98f7f8c097a',
           });
           if (createContact.error?.message) {
+            if (process.env.NODE_ENV !== "production") {
+                console.log(createContact.error);
+            }
             return Response.json({message: "Something went wrong!",source: "RSND"},{
                 status: 500,
             })
           }
-          console.log(createContact.data?.id);
+          if (process.env.NODE_ENV !== "production") {
+            console.log(createContact.data?.id);
+        }
     }
-    console.log(res);
-    return Response.json({message: "Thank you for reaching out! We will get back to you ASAP!"},{
+    if (process.env.NODE_ENV !== "production") {
+        console.log(res);
+    }
+    return Response.json({message: "OK"},{
         status: 200,
     })
   }
