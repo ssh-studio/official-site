@@ -1,4 +1,4 @@
-import Airtable, { Error } from "airtable";
+import Airtable, { Error, FieldSet, Record } from "airtable";
 import { Resend } from 'resend';
 
 export async function POST(request: Request) {
@@ -10,12 +10,23 @@ export async function POST(request: Request) {
         "Message": res.message,
         "Company Name": res.company,
         "isSubscribed": res.newsletters === "on" ? true : false
-    }, function (err:Error) {
+    }, function (err:Error,record:Record<FieldSet> | undefined) {
         if (err) {
-            console.error(err);
+            if (process.env.NODE_ENV !== "production") {
+                console.error(err);
+            }
             return Response.json({ message: "Something went wrong!", source: "ARTB" }, {
                 status: 500,
             });
+        }
+        let recordID = record?.getId()
+        if (recordID === "") {
+            return Response.json({ message: "Something went wrong!", source: "ARTB" }, {
+                status: 500,
+            });
+        }
+        if (process.env.NODE_ENV !== "production") {
+            console.log(recordID)
         }
     })
     if (process.env.NODE_ENV !== "production") {
