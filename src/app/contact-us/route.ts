@@ -13,7 +13,7 @@ export async function POST(request: Request) {
         "isSubscribed": res.newsletters === "on" ? true : false
     }, function (err:Error,record:Record<FieldSet> | undefined) {
         if (err) {
-            if (process.env.NODE_ENVIRONMENT !== "production") {
+            if (process.env.SITE_ENV !== "production") {
                 console.error(err);
             }
             return Response.json({ message: "Something went wrong!", source: "ARTB" }, {
@@ -26,7 +26,7 @@ export async function POST(request: Request) {
                 status: 500,
             });
         }
-        if (process.env.NODE_ENVIRONMENT !== "production") {
+        if (process.env.SITE_ENV !== "production") {
             console.log(recordID)
         }
     })
@@ -40,21 +40,21 @@ export async function POST(request: Request) {
             audienceId: 'f5c99301-b8f0-46ee-997e-e98f7f8c097a',
           });
           if (createContact.error?.message) {
-            if (process.env.NODE_ENVIRONMENT !== "production") {
+            if (process.env.SITE_ENV !== "production") {
                 console.log(createContact.error);
             }
             return Response.json({message: "Something went wrong!",source: "RSND"},{
                 status: 500,
             })
           }
-          if (process.env.NODE_ENVIRONMENT !== "production") {
+          if (process.env.SITE_ENV !== "production") {
             console.log(createContact.data?.id);
         }
     }
-    if (process.env.NODE_ENVIRONMENT !== "production") {
+    if (process.env.SITE_ENV !== "production") {
         console.log(res);
     }
-    if (process.env.NODE_ENVIRONMENT !== "production") {
+    if (process.env.SITE_ENV !== "production") {
         return Response.json({message: "OK",airtble: AirtableStatus},{
             status: 200,
         })
