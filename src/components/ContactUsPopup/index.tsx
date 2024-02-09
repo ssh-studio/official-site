@@ -66,7 +66,7 @@ const ContactUsPopup: FunctionComponent<
     if (!captchaVerfied) {
       return alert("Captcha Not Verified");
     }
-    if (process.env.NODE_ENV !== "production") {
+    if (process.env.NODE_ENVIRONMENT !== "production") {
       console.log(responseBody);
     }
     setIsSubmitting(true);
@@ -80,12 +80,12 @@ const ContactUsPopup: FunctionComponent<
       .then(function (response) {
         setHasSubmitted(true);
         setResponseBody(formData);
-        if (process.env.NODE_ENV !== "production") {
+        if (process.env.NODE_ENVIRONMENT !== "production") {
           console.log(response);
         }
       })
       .catch(function (error) {
-        if (process.env.NODE_ENV !== "production") {
+        if (process.env.NODE_ENVIRONMENT !== "production") {
           console.log(error);
         }
       });
