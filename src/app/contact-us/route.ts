@@ -16,11 +16,13 @@ export async function POST(request: Request) {
             if (process.env.SITE_ENV !== "production") {
                 console.error(err);
             }
+            AirtableStatus = false;
             return Response.json({ message: "Something went wrong!", source: "ARTB" }, {
                 status: 500,
             });
         }
         let recordID = record?.getId()
+        AirtableStatus=true;
         if (recordID === "") {
             return Response.json({ message: "Something went wrong!", source: "ARTB" }, {
                 status: 500,
