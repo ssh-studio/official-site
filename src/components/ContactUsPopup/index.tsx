@@ -66,9 +66,6 @@ const ContactUsPopup: FunctionComponent<
     if (!captchaVerfied) {
       return alert("Captcha Not Verified");
     }
-    if (process.env.SITE_ENV !== "production") {
-      console.log(responseBody);
-    }
     setIsSubmitting(true);
     fetch("/contact-us", {
       method: "POST",
@@ -76,19 +73,10 @@ const ContactUsPopup: FunctionComponent<
       headers: {
         "Content-Type": "application/json",
       },
-    })
-      .then(function (response) {
-        setHasSubmitted(true);
-        setResponseBody(formData);
-        if (process.env.SITE_ENV !== "production") {
-          console.log(response);
-        }
-      })
-      .catch(function (error) {
-        if (process.env.SITE_ENV !== "production") {
-          console.log(error);
-        }
-      });
+    }).then(function (response) {
+      setHasSubmitted(true);
+      setResponseBody(formData);
+    });
     setTimeout(() => {
       setIsSubmitting(false);
       setHasSubmitted(false);
