@@ -94,7 +94,7 @@ const ContactUsPopup: FunctionComponent<
       setHasSubmitted(false);
       setIsopen(false);
       hcaptcha.current?.resetCaptcha();
-    }, 2000);
+    }, 3000);
   };
   return (
     <>

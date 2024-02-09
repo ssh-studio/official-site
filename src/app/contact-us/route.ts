@@ -59,7 +59,7 @@ export async function POST(request: Request) {
             status: 200,
         })
     }
-    return Response.json({message: "OK"},{
+    return Response.json({message: "OK",airtble: AirtableStatus},{
         status: 200,
     })
   }
