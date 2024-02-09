@@ -2,9 +2,10 @@ import Airtable, { Error, FieldSet, Record } from "airtable";
 import { Resend } from 'resend';
 
 export async function POST(request: Request) {
+    let AirtableStatus;
     const airtableBase = new Airtable({apiKey: process.env.AIRTABLE_ACCESS_TOKEN}).base("applEi0ZgreOceYRX")
     const res = await request.json()
-    const createAirtableRecord = airtableBase('Table 1').create({
+    airtableBase('Table 1').create({
         "Name": res.name,
         "Email": res.email,
         "Message": res.message,
@@ -29,9 +30,6 @@ export async function POST(request: Request) {
             console.log(recordID)
         }
     })
-    if (process.env.NODE_ENV !== "production") {
-        console.log(createAirtableRecord);
-    }
     if (res.newsletters === "on") {
         const resend = new Resend(process.env.RESEND_API_KEY);
         const createContact = await resend.contacts.create({
@@ -55,6 +53,11 @@ export async function POST(request: Request) {
     }
     if (process.env.NODE_ENV !== "production") {
         console.log(res);
+    }
+    if (process.env.NODE_ENV !== "production") {
+        return Response.json({message: "OK",airtble: AirtableStatus},{
+            status: 200,
+        })
     }
     return Response.json({message: "OK"},{
         status: 200,
