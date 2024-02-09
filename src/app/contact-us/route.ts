@@ -16,7 +16,7 @@ export async function POST(request: Request) {
             if (process.env.SITE_ENV !== "production") {
                 console.error(err);
             }
-            AirtableStatus = false;
+            AirtableStatus = err.message;
             return Response.json({ message: "Something went wrong!", source: "ARTB" }, {
                 status: 500,
             });
