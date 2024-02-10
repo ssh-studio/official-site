@@ -1,19 +1,11 @@
 "use client";
 
 import ContactUsPopup from "@/components/ContactUsPopup";
-import Head from "next/head";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>SSH.Studio</title>
-        <meta
-          name="description"
-          content="Official Site of SSH.studio"
-        />
-      </Head>
       <header className="flex max-w-7xl px-4 items-center justify-start mx-auto h-24">
         <div className="mr-auto flex items-center gap-x-2">
           <Image
